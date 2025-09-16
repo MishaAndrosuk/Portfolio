@@ -1,0 +1,589 @@
+
+@media print {
+
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    color: #000;
+    background: #fff;
+    margin: 0;
+    padding: 20mm;
+    width: auto;
+    min-height: auto;
+  }
+
+
+  @page {
+    size: A4;
+    margin: 15mm 20mm;
+
+    @top-center {
+      content: "Portfolio - Frontend Engineer";
+      font-size: 10pt;
+      color: #666;
+    }
+
+    @bottom-right {
+      content: "Page " counter(page) " of " counter(pages);
+      font-size: 10pt;
+      color: #666;
+    }
+  }
+
+  @page :first {
+    @top-center {
+      content: none;
+    }
+  }
+
+
+  .navbar,
+  .hero,
+  .back-to-top,
+  .modal,
+  .testimonials,
+  .contact,
+  .filter-bar,
+  .sort-bar,
+  .btn,
+  .navbar__toggle,
+  .theme-toggle,
+  .contact-form,
+  .project-card__overlay,
+  .project-card__actions,
+  [data-animate],
+  .hero__actions,
+  .hero__visual,
+  nav,
+  header,
+  footer {
+    display: none !important;
+  }
+
+
+  h1 {
+    font-size: 24pt;
+    font-weight: bold;
+    color: #000;
+    margin: 0 0 16pt 0;
+    page-break-after: avoid;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 18pt;
+    font-weight: bold;
+    color: #000;
+    margin: 20pt 0 12pt 0;
+    page-break-after: avoid;
+    border-bottom: 1pt solid #000;
+    padding-bottom: 4pt;
+  }
+
+  h3 {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #000;
+    margin: 16pt 0 8pt 0;
+    page-break-after: avoid;
+  }
+
+  h4 {
+    font-size: 12pt;
+    font-weight: bold;
+    color: #000;
+    margin: 12pt 0 6pt 0;
+  }
+
+  p {
+    font-size: 11pt;
+    line-height: 1.4;
+    margin: 0 0 8pt 0;
+    text-align: justify;
+    orphans: 3;
+    widows: 3;
+  }
+
+
+  .container {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .section {
+    padding: 0;
+    margin: 20pt 0;
+    page-break-inside: avoid;
+  }
+
+  .section:first-child {
+    margin-top: 0;
+  }
+
+  .section-header {
+    text-align: left;
+    margin-bottom: 16pt;
+  }
+
+  .section-title::after {
+    display: none;
+  }
+
+  .section-subtitle {
+    font-size: 11pt;
+    color: #666;
+    margin: 4pt 0 0 0;
+    max-width: none;
+  }
+
+
+  .about {
+    background: transparent;
+  }
+
+  .about__content {
+    display: block;
+  }
+
+  .about__description {
+    margin-bottom: 16pt;
+  }
+
+  .about__skills {
+    background: transparent;
+    border: 1pt solid #ccc;
+    border-radius: 0;
+    padding: 12pt;
+    margin-top: 16pt;
+    page-break-inside: avoid;
+  }
+
+  .about__skills-title {
+    font-size: 14pt;
+    margin-bottom: 8pt;
+    text-align: left;
+  }
+
+  .skill-chips {
+    display: block;
+    margin-bottom: 12pt;
+  }
+
+  .chip {
+    display: inline;
+    background: transparent;
+    color: #000;
+    border: none;
+    padding: 0;
+    margin: 0 8pt 0 0;
+    border-radius: 0;
+  }
+
+  .chip::after {
+    content: ", ";
+  }
+
+  .skill-chips .chip:last-child::after {
+    content: "";
+  }
+
+  .about__stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 12pt;
+    border-top: 1pt solid #ccc;
+    padding-top: 12pt;
+  }
+
+  .stat__number {
+    font-size: 16pt;
+    font-weight: bold;
+    display: block;
+  }
+
+  .stat__label {
+    font-size: 10pt;
+    color: #666;
+  }
+
+
+  .skills {
+    background: transparent;
+  }
+
+  .tabs {
+    display: none;
+  }
+
+  .tab-panels {
+    display: block;
+  }
+
+  .tab-panel {
+    display: block !important;
+    margin-bottom: 20pt;
+  }
+
+  .tab-panel::before {
+    content: attr(aria-labelledby);
+    display: block;
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 12pt;
+    text-transform: capitalize;
+  }
+
+  .skill-grid {
+    display: block;
+  }
+
+  .skill-card {
+    display: block;
+    background: transparent;
+    border: none;
+    padding: 6pt 0;
+    border-bottom: 1pt dotted #ccc;
+    transform: none;
+  }
+
+  .skill-card__icon {
+    display: none;
+  }
+
+  .skill-card__title {
+    display: inline;
+    font-size: 11pt;
+  }
+
+  .skill-badge {
+    display: inline;
+    background: transparent;
+    color: #666;
+    padding: 0;
+    margin-left: 8pt;
+    border-radius: 0;
+    text-transform: none;
+    font-size: 10pt;
+  }
+
+  .skill-badge::before {
+    content: "(";
+  }
+
+  .skill-badge::after {
+    content: ")";
+  }
+
+
+  .projects {
+    background: transparent;
+  }
+
+  .projects__grid {
+    display: block;
+  }
+
+  .project-card {
+    background: transparent;
+    border: 1pt solid #ccc;
+    border-radius: 0;
+    padding: 12pt;
+    margin-bottom: 16pt;
+    page-break-inside: avoid;
+    cursor: auto;
+    transform: none;
+  }
+
+  .project-card__image {
+    display: none;
+  }
+
+  .project-card__title {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 6pt;
+    color: #000;
+  }
+
+  .project-card__description {
+    font-size: 11pt;
+    color: #333;
+    margin-bottom: 8pt;
+  }
+
+  .project-card__tech {
+    display: block;
+    margin-bottom: 8pt;
+  }
+
+  .project-card__tech::before {
+    content: "Technologies: ";
+    font-weight: bold;
+    font-size: 10pt;
+  }
+
+  .project-card__tech .chip {
+    font-size: 10pt;
+    color: #666;
+  }
+
+
+  .experience {
+    background: transparent;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 0;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .timeline-item {
+    margin-bottom: 20pt;
+    page-break-inside: avoid;
+  }
+
+  .timeline-item__marker {
+    display: none;
+  }
+
+  .timeline-item__content {
+    background: transparent;
+    border: 1pt solid #ccc;
+    border-radius: 0;
+    padding: 12pt;
+    position: relative;
+  }
+
+  .timeline-item__content::before,
+  .timeline-item__content::after {
+    display: none;
+  }
+
+  .timeline-item__title {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 4pt;
+  }
+
+  .timeline-item__company {
+    font-size: 12pt;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 4pt;
+  }
+
+  .timeline-item__date {
+    font-size: 10pt;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 8pt;
+  }
+
+  .timeline-item__description p {
+    font-size: 11pt;
+    margin-bottom: 8pt;
+  }
+
+  .timeline-item__achievements {
+    margin-top: 8pt;
+  }
+
+  .timeline-item__achievements li {
+    font-size: 10pt;
+    color: #333;
+    margin-bottom: 4pt;
+    padding-left: 12pt;
+    position: relative;
+  }
+
+  .timeline-item__achievements li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #666;
+  }
+
+
+  .contact-info {
+    background: transparent;
+    border: 2pt solid #000;
+    padding: 16pt;
+    margin: 20pt 0;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+
+  .contact-links {
+    display: block;
+  }
+
+  .contact-link {
+    display: block;
+    background: transparent;
+    border: none;
+    padding: 4pt 0;
+    color: #000;
+    text-decoration: none;
+    transform: none;
+  }
+
+  .contact-link svg {
+    display: none;
+  }
+
+  .contact-link::before {
+    font-weight: bold;
+    margin-right: 8pt;
+  }
+
+  .contact-link[href^="mailto:"]::before {
+    content: "Email: ";
+  }
+
+  .contact-link[href^="tel:"]::before {
+    content: "Phone: ";
+  }
+
+  .contact-link[href*="linkedin"]::before {
+    content: "LinkedIn: ";
+  }
+
+  .contact-link[href*="github"]::before {
+    content: "GitHub: ";
+  }
+
+  .contact-link[href*="telegram"]::before {
+    content: "Telegram: ";
+  }
+
+
+  .print-only {
+    display: block !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  .page-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #666;
+  }
+
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+
+  img {
+    max-width: 100%;
+    height: auto;
+    page-break-inside: avoid;
+  }
+
+  .hero__avatar {
+    display: block !important;
+    width: 80pt;
+    height: 80pt;
+    border-radius: 50%;
+    margin: 0 auto 16pt auto;
+    border: 2pt solid #000;
+  }
+
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12pt 0;
+  }
+
+  th, td {
+    border: 1pt solid #000;
+    padding: 6pt;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+
+
+  .two-column,
+  .three-column {
+    display: block;
+  }
+
+  .card-grid {
+    display: block;
+  }
+
+  .flex-container {
+    display: block;
+  }
+
+  .grid-container,
+  .grid-auto-fit,
+  .grid-responsive {
+    display: block;
+  }
+
+
+  .text-secondary,
+  .text-tertiary,
+  .text-muted {
+    color: #333 !important;
+  }
+
+  .text-accent {
+    color: #000 !important;
+    font-weight: bold;
+  }
+
+
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}

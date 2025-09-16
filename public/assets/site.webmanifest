@@ -1,0 +1,21 @@
+{
+  "name": "Portfolio - Frontend Engineer",
+  "short_name": "Portfolio",
+  "description": "Професійне портфоліо Frontend Engineer з демонстрацією проектів та навичок.",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#00d4ff",
+  "background_color": "#0a0a0a",
+  "orientation": "portrait-primary",
+  "categories": ["business", "portfolio", "developer"],
+  "lang": "uk",
+  "scope": "/",
+  "prefer_related_applications": false
+}

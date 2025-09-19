@@ -1,4 +1,5 @@
 import { ThemeProvider } from './contexts/ThemeContext';
+import { LanguageProvider } from './contexts/LanguageContext';
 
 // Import CSS
 import './css/variables.css';
@@ -22,25 +23,27 @@ import BackToTop from './components/BackToTop/BackToTop';
 
 function App() {
   return (
-    <ThemeProvider>
-      <div className="App">
-        <Header />
+    <LanguageProvider>
+      <ThemeProvider>
+        <div className="App">
+          <Header />
 
-        <main id="main" role="main">
-          <Hero />
-          <About />
-          <Skills />
-          <Projects />
-          <Experience />
-          <Contact />
-        </main>
+          <main id="main" role="main">
+            <Hero />
+            <About />
+            <Skills />
+            <Projects />
+            <Experience />
+            <Contact />
+          </main>
 
-        <Footer />
-        <BackToTop />
+          <Footer />
+          <BackToTop />
 
-        <div className="sr-only" aria-live="polite" id="announcements"></div>
-      </div>
-    </ThemeProvider>
+          <div className="sr-only" aria-live="polite" id="announcements"></div>
+        </div>
+      </ThemeProvider>
+    </LanguageProvider>
   );
 }
 

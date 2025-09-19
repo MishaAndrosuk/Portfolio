@@ -18,8 +18,10 @@ import {
   Download,
   Menu as MenuIcon,
 } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useSmoothScroll } from '../../hooks/useSmoothScroll';
+import LanguageSwitcher from '../LanguageSwitcher';
 import type { NavigationItem } from '../../types';
 
 interface HeaderProps {}
@@ -28,17 +30,18 @@ const Header: React.FC<HeaderProps> = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const { theme, toggleTheme } = useTheme();
   const { scrollToElement } = useSmoothScroll();
+  const { t } = useTranslation();
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 100,
   });
 
   const navigationItems: NavigationItem[] = [
-    { href: 'about', label: 'Про мене' },
-    { href: 'skills', label: 'Навички' },
-    { href: 'projects', label: 'Проєкти' },
-    { href: 'experience', label: 'Досвід' },
-    { href: 'contact', label: 'Контакти' },
+    { href: 'about', label: t('navigation.about') },
+    { href: 'skills', label: t('navigation.skills') },
+    { href: 'projects', label: t('navigation.projects') },
+    { href: 'experience', label: t('navigation.experience') },
+    { href: 'contact', label: t('navigation.contact') },
   ];
 
   const handleNavClick = (href: string) => {
@@ -156,9 +159,11 @@ const Header: React.FC<HeaderProps> = () => {
               flexShrink: 0,
               zIndex: 1000
             }}>
+              <LanguageSwitcher />
+
               <IconButton
                 onClick={toggleTheme}
-                aria-label="Перемкнути тему"
+                aria-label={t('buttons.toggleTheme')}
                 sx={{
                   color: 'text.primary',
                   minWidth: { xs: 40, sm: 48 },
@@ -184,7 +189,7 @@ const Header: React.FC<HeaderProps> = () => {
                   fontSize: { sm: '0.875rem', md: '1rem' },
                 }}
               >
-                Завантажити CV
+                {t('buttons.downloadCV')}
               </Button>
 
               {/* Mobile Menu */}
@@ -201,7 +206,7 @@ const Header: React.FC<HeaderProps> = () => {
                   }
                 }}
                 onClick={handleMobileMenuOpen}
-                aria-label="Відкрити мобільне меню"
+                aria-label={t('buttons.openMobileMenu')}
               >
                 <MenuIcon />
               </IconButton>
@@ -255,7 +260,7 @@ const Header: React.FC<HeaderProps> = () => {
                 onClick={handleMobileMenuClose}
               >
                 <Download sx={{ mr: 1 }} />
-                Завантажити CV
+                {t('buttons.downloadCV')}
               </MenuItem>
             </Menu>
           </Toolbar>

@@ -10,6 +10,7 @@ import {
 } from '@mui/material';
 import { GridLegacy as Grid } from '@mui/material';
 import { Download, ArrowForward } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import { useSmoothScroll } from '../../hooks/useSmoothScroll';
 
@@ -18,6 +19,7 @@ interface HeroProps {}
 const Hero: React.FC<HeroProps> = () => {
   const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.3 });
   const { scrollToElement } = useSmoothScroll();
+  const { t } = useTranslation();
   const theme = useTheme();
 
   return (
@@ -69,7 +71,7 @@ const Hero: React.FC<HeroProps> = () => {
                   fontWeight: 500,
                 }}
               >
-                Привіт, я
+                {t('hero.greeting')}
               </Typography>
 
               <Typography
@@ -86,7 +88,7 @@ const Hero: React.FC<HeroProps> = () => {
                   lineHeight: 1.2,
                 }}
               >
-                Андрощук Михайло
+                {t('hero.name')}
               </Typography>
 
               <Typography
@@ -99,7 +101,7 @@ const Hero: React.FC<HeroProps> = () => {
                   maxWidth: 600,
                 }}
               >
-                Front-End Developer з досвідом роботи з React, TypeScript та сучасними веб-технологіями
+                {t('hero.title')}
               </Typography>
 
               <Stack
@@ -126,7 +128,7 @@ const Hero: React.FC<HeroProps> = () => {
                     transition: 'all 0.3s ease',
                   }}
                 >
-                  Переглянути проєкти
+                  {t('buttons.viewProjects')}
                 </Button>
 
                 <Button
@@ -149,7 +151,7 @@ const Hero: React.FC<HeroProps> = () => {
                     transition: 'all 0.3s ease',
                   }}
                 >
-                  Завантажити CV
+                  {t('buttons.downloadCV')}
                 </Button>
               </Stack>
             </Box>
@@ -183,7 +185,7 @@ const Hero: React.FC<HeroProps> = () => {
 
               <Avatar
                 src="/assets/images/avatar.jpg"
-                alt="Андрощук Михайло"
+                alt={t('hero.name')}
                 sx={{
                   width: { xs: 280, sm: 320, md: 380 },
                   height: { xs: 280, sm: 320, md: 380 },

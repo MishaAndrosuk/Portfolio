@@ -18,6 +18,7 @@ import {
   Build,
   BugReport,
 } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import type { SkillCard } from '../../types';
 
@@ -35,12 +36,13 @@ interface SkillTabData {
 const Skills: React.FC<SkillsProps> = () => {
   const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.3 });
   const [activeTab, setActiveTab] = useState<TabType>('languages');
+  const { t } = useTranslation();
   const theme = useTheme();
 
   const skillTabs: SkillTabData[] = [
     {
       id: 'languages',
-      label: 'Мови програмування',
+      label: t('skills.categories.languages'),
       icon: <Code />,
       skills: [
         { title: 'JavaScript', level: 'expert' },
@@ -51,7 +53,7 @@ const Skills: React.FC<SkillsProps> = () => {
     },
     {
       id: 'frameworks',
-      label: 'Фреймворки',
+      label: t('skills.categories.frameworks'),
       icon: <Web />,
       skills: [
         { title: 'React', level: 'expert' },
@@ -62,7 +64,7 @@ const Skills: React.FC<SkillsProps> = () => {
     },
     {
       id: 'tools',
-      label: 'Інструменти',
+      label: t('skills.categories.tools'),
       icon: <Build />,
       skills: [
         { title: 'Git', level: 'expert' },
@@ -73,7 +75,7 @@ const Skills: React.FC<SkillsProps> = () => {
     },
     {
       id: 'testing',
-      label: 'Тестування',
+      label: t('skills.categories.testing'),
       icon: <BugReport />,
       skills: [
         { title: 'Jest', level: 'advanced' },
@@ -95,13 +97,7 @@ const Skills: React.FC<SkillsProps> = () => {
   };
 
   const getLevelLabel = (level: SkillCard['level']) => {
-    const labels = {
-      beginner: 'Beginner',
-      intermediate: 'Intermediate',
-      advanced: 'Advanced',
-      expert: 'Expert',
-    };
-    return labels[level];
+    return t(`skills.levels.${level}`);
   };
 
   return (
@@ -134,7 +130,7 @@ const Skills: React.FC<SkillsProps> = () => {
               color: 'text.primary',
             }}
           >
-            Навички
+            {t('skills.title')}
           </Typography>
           <Typography
             variant="h6"
@@ -144,7 +140,7 @@ const Skills: React.FC<SkillsProps> = () => {
               mx: 'auto',
             }}
           >
-            Технології та інструменти, з якими я працюю
+            {t('skills.subtitle')}
           </Typography>
         </Box>
 

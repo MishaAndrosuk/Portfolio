@@ -9,6 +9,7 @@ import {
   alpha,
 } from '@mui/material';
 import { Work, School, Code } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import type { TimelineItem } from '../../types';
 
@@ -16,24 +17,17 @@ interface ExperienceProps {}
 
 const Experience: React.FC<ExperienceProps> = () => {
   const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.3 });
+  const { t } = useTranslation();
   const theme = useTheme();
 
   const timelineData: TimelineItem[] = [
     {
       id: 1,
-      title: 'Front End Developer',
-      company: 'MetaArt',
+      title: t('experience.jobs.metaart.title'),
+      company: t('experience.jobs.metaart.company'),
       date: '02/2025 - 09/2025',
-      description: 'Робота над проєктом з фіксації QA багів, створення нових компонентів та сторінок. Розробка переиспользуємих компонентів та додавання нового функціоналу.',
-      achievements: [
-        'Виправив QA баги пов\'язані зі стилями, валідацією та мобільним відображенням',
-        'Створив сторінку для перегляду минулих тренувальних сесій',
-        'Розробив переиспользуємі компоненти: confirm dialog, dateRangeSelector, filter, search',
-        'Створив сторінку для перегляду платежів',
-        'Додав можливість перемикання між Google Maps та Leaflet Maps використовуючи factory',
-        'Додав пагінацію (Front End)',
-        'Підключив PWA'
-      ],
+      description: t('experience.jobs.metaart.description'),
+      achievements: t('experience.jobs.metaart.achievements', { returnObjects: true }) as string[],
       type: 'work'
     }
   ];
@@ -81,7 +75,7 @@ const Experience: React.FC<ExperienceProps> = () => {
               color: 'text.primary',
             }}
           >
-            Досвід
+            {t('experience.title')}
           </Typography>
           <Typography
             variant="h6"
@@ -91,7 +85,7 @@ const Experience: React.FC<ExperienceProps> = () => {
               mx: 'auto',
             }}
           >
-            Мій професійний шлях
+            {t('experience.subtitle')}
           </Typography>
         </Box>
 
@@ -249,7 +243,7 @@ const Experience: React.FC<ExperienceProps> = () => {
                           bgcolor: 'primary.main',
                         }}
                       />
-                      Ключові досягнення
+                      {t('experience.keyAchievements')}
                     </Typography>
 
                     <Box

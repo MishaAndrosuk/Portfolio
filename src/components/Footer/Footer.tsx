@@ -13,10 +13,12 @@ import {
   GitHub,
   Telegram,
 } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
+  const { t } = useTranslation();
   const theme = useTheme();
 
   const socialLinks = [
@@ -86,7 +88,7 @@ const Footer: React.FC<FooterProps> = () => {
               color="text.secondary"
               sx={{ fontWeight: 500 }}
             >
-              © {currentYear} Андрощук Михайло. Всі права захищені.
+              © {currentYear} {t('hero.name')}. {t('footer.rights')}.
             </Typography>
           </Stack>
 

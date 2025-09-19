@@ -1,0 +1,137 @@
+{
+  "navigation": {
+    "about": "Über mich",
+    "skills": "Fähigkeiten",
+    "projects": "Projekte",
+    "experience": "Erfahrung",
+    "contact": "Kontakt"
+  },
+  "buttons": {
+    "downloadCV": "Lebenslauf herunterladen",
+    "viewProjects": "Projekte ansehen",
+    "toggleTheme": "Design wechseln",
+    "openMobileMenu": "Mobilmenü öffnen"
+  },
+  "hero": {
+    "greeting": "Hallo, ich bin",
+    "name": "Androshchuk Mykhailo",
+    "title": "Front-End-Entwickler mit Erfahrung in React, TypeScript und modernen Web-Technologien"
+  },
+  "about": {
+    "title": "Über mich",
+    "subtitle": "Leidenschaft für die Erstellung außergewöhnlicher digitaler Erfahrungen",
+    "paragraph1": "Motivierter und arbeitsbereiter Front-End-Entwickler mit einem soliden Verständnis moderner Web-Technologien, einschließlich HTML, CSS, JavaScript, React und TypeScript. Offen für das Erlernen neuer Tools und Ansätze, schnelle Anpassung an Team-Workflows und Aufgaben.",
+    "paragraph2": "Strebe danach, an realen Projekten teilzunehmen, neue Komponenten zu entwickeln und als Entwickler zu wachsen, indem ich praktische Herausforderungen löse. Fokussiert auf die Erstellung nützlicher, zugänglicher und benutzerfreundlicher Schnittstellen, die einen Unterschied machen.",
+    "keySkills": "Schlüsselkompetenzen",
+    "contactMe": "Kontaktiere mich",
+    "stats": {
+      "experience": "Jahr Erfahrung",
+      "technologies": "Technologien",
+      "companies": "Unternehmen"
+    }
+  },
+  "skills": {
+    "title": "Fähigkeiten",
+    "subtitle": "Technologien und Tools, mit denen ich arbeite",
+    "categories": {
+      "languages": "Programmiersprachen",
+      "frameworks": "Frameworks",
+      "tools": "Werkzeuge",
+      "testing": "Testing"
+    },
+    "levels": {
+      "beginner": "Anfänger",
+      "intermediate": "Fortgeschritten",
+      "advanced": "Erweitert",
+      "expert": "Experte"
+    }
+  },
+  "projects": {
+    "title": "Projekte",
+    "subtitle": "Wichtige Projekte, an denen ich gearbeitet habe",
+    "viewDetails": "Details ansehen",
+    "viewLive": "Live ansehen",
+    "viewCode": "Code ansehen",
+    "allProjects": "Alle Projekte ansehen",
+    "filters": {
+      "all": "Alle",
+      "web": "Web Apps",
+      "sport": "Sport",
+      "mobile": "Mobile",
+      "ui": "UI/UX",
+      "open-source": "Open Source"
+    },
+    "sort": {
+      "date": "Nach Datum",
+      "name": "Nach Name",
+      "tech": "Nach Technologie"
+    },
+    "data": {
+      "playsport": {
+        "title": "PlaySport - Sportplattform",
+        "description": "Sportplattform für die Buchung von Sportanlagen mit interaktiver Karte, Zahlungssystem und Trainingsverwaltung.",
+        "highlights": [
+          "QA-Bugs im Zusammenhang mit Stilen und mobiler Anzeige behoben",
+          "Seite zur Anzeige vergangener Trainingssitzungen erstellt",
+          "Wiederverwendbare Komponenten entwickelt: confirm dialog, dateRangeSelector, filter, search",
+          "Seite zur Anzeige von Zahlungen erstellt",
+          "Möglichkeit zum Wechseln zwischen Google Maps und Leaflet Maps mittels Factory Pattern hinzugefügt",
+          "Paginierung hinzugefügt (Front End)",
+          "PWA-Funktionalität angeschlossen"
+        ]
+      }
+    }
+  },
+  "experience": {
+    "title": "Erfahrung",
+    "subtitle": "Mein beruflicher Werdegang",
+    "present": "Gegenwart",
+    "keyAchievements": "Wichtige Erfolge",
+    "jobs": {
+      "metaart": {
+        "title": "Front End Developer",
+        "company": "MetaArt",
+        "description": "Arbeit an einem Projekt zur Behebung von QA-Bugs, Erstellung neuer Komponenten und Seiten. Entwicklung wiederverwendbarer Komponenten und Hinzufügung neuer Funktionalitäten.",
+        "achievements": [
+          "QA-Bugs im Zusammenhang mit Stilen, Validierung und mobiler Anzeige behoben",
+          "Seite zur Anzeige vergangener Trainingssitzungen erstellt",
+          "Wiederverwendbare Komponenten entwickelt: confirm dialog, dateRangeSelector, filter, search",
+          "Seite zur Anzeige von Zahlungen erstellt",
+          "Möglichkeit zum Wechseln zwischen Google Maps und Leaflet Maps mittels Factory hinzugefügt",
+          "Paginierung hinzugefügt (Front End)",
+          "PWA angeschlossen"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Kontakt aufnehmen",
+    "getInTouch": "Kontakt aufnehmen",
+    "longDescription": "Bereit, neue Kooperationsmöglichkeiten, interessante Projekte zu besprechen oder einfach über Frontend-Entwicklung, neue Technologien und Webentwicklung zu plaudern. Ich freue mich, von Ihnen zu hören und Möglichkeiten für eine Zusammenarbeit bei interessanten Aufgaben zu besprechen!",
+    "description": "Bereit zur Zusammenarbeit bei interessanten Projekten",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send": "Senden",
+    "form": {
+      "placeholders": {
+        "name": "Ihr Name",
+        "email": "ihre.email@beispiel.com",
+        "message": "Schreiben Sie Ihre Nachricht..."
+      }
+    },
+    "labels": {
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "telegram": "Telegram",
+      "github": "GitHub"
+    }
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten",
+    "builtWith": "Erstellt mit",
+    "quickLinks": "Schnelle Links",
+    "social": "Soziale Medien"
+  }
+}

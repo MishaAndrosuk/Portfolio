@@ -12,6 +12,7 @@ import {
 } from '@mui/material';
 import { GridLegacy as Grid } from '@mui/material';
 import { ArrowForward, Code, Timeline, Business } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import { useSmoothScroll } from '../../hooks/useSmoothScroll';
 
@@ -20,13 +21,14 @@ interface AboutProps {}
 const About: React.FC<AboutProps> = () => {
   const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.3 });
   const { scrollToElement } = useSmoothScroll();
+  const { t } = useTranslation();
   const theme = useTheme();
 
   const skills = ['JavaScript', 'TypeScript', 'React', 'Redux', 'HTML5', 'CSS3', 'GitHub'];
   const stats = [
-    { number: 1, label: 'Рік досвіду', icon: <Timeline /> },
-    { number: 7, label: 'Технологій', suffix: '+', icon: <Code /> },
-    { number: 1, label: 'Компанія', icon: <Business /> },
+    { number: 1, label: t('about.stats.experience'), icon: <Timeline /> },
+    { number: 7, label: t('about.stats.technologies'), suffix: '+', icon: <Code /> },
+    { number: 1, label: t('about.stats.companies'), icon: <Business /> },
   ];
 
   return (
@@ -59,7 +61,7 @@ const About: React.FC<AboutProps> = () => {
               color: 'text.primary',
             }}
           >
-            Про мене
+            {t('about.title')}
           </Typography>
           <Typography
             variant="h6"
@@ -69,7 +71,7 @@ const About: React.FC<AboutProps> = () => {
               mx: 'auto',
             }}
           >
-            Passion for creating exceptional digital experiences
+            {t('about.subtitle')}
           </Typography>
         </Box>
 
@@ -91,9 +93,7 @@ const About: React.FC<AboutProps> = () => {
                   color: 'text.primary',
                 }}
               >
-                Мотивований та готовий до роботи Front-End розробник з твердим розумінням сучасних веб-технологій,
-                включаючи HTML, CSS, JavaScript, React та TypeScript. Відкритий до вивчення нових інструментів та підходів,
-                швидко адаптуюся до робочих процесів команди та завдань.
+                {t('about.paragraph1')}
               </Typography>
 
               <Typography
@@ -105,9 +105,7 @@ const About: React.FC<AboutProps> = () => {
                   color: 'text.primary',
                 }}
               >
-                Прагну брати участь у реальних проєктах, розробляти нові компоненти та розвиватися як розробник,
-                вирішуючи практичні завдання. Зосереджений на створенні корисних, доступних та зручних інтерфейсів,
-                які справляють різницю.
+                {t('about.paragraph2')}
               </Typography>
 
               <Typography
@@ -118,7 +116,7 @@ const About: React.FC<AboutProps> = () => {
                   color: 'text.primary',
                 }}
               >
-                Ключові компетенції
+                {t('about.keySkills')}
               </Typography>
 
               <Stack direction="row" spacing={1} sx={{ flexWrap: 'wrap', gap: 1, mb: 4 }}>
@@ -151,7 +149,7 @@ const About: React.FC<AboutProps> = () => {
                   fontWeight: 600,
                 }}
               >
-                Написати мені
+                {t('about.contactMe')}
               </Button>
             </Box>
           </Grid>

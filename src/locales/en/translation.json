@@ -1,0 +1,137 @@
+{
+  "navigation": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "buttons": {
+    "downloadCV": "Download CV",
+    "viewProjects": "View Projects",
+    "toggleTheme": "Toggle Theme",
+    "openMobileMenu": "Open Mobile Menu"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Androshchuk Mykhailo",
+    "title": "Front-End Developer with experience in React, TypeScript and modern web technologies"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Passion for creating exceptional digital experiences",
+    "paragraph1": "Motivated and work-ready Front-End developer with a solid understanding of modern web technologies, including HTML, CSS, JavaScript, React, and TypeScript. Open to learning new tools and approaches, quickly adapting to team workflows and tasks.",
+    "paragraph2": "Aspiring to participate in real projects, develop new components, and grow as a developer by solving practical challenges. Focused on creating useful, accessible, and user-friendly interfaces that make a difference.",
+    "keySkills": "Key Competencies",
+    "contactMe": "Contact Me",
+    "stats": {
+      "experience": "Year of Experience",
+      "technologies": "Technologies",
+      "companies": "Company"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies and tools I work with",
+    "categories": {
+      "languages": "Programming Languages",
+      "frameworks": "Frameworks",
+      "tools": "Tools",
+      "testing": "Testing"
+    },
+    "levels": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced",
+      "expert": "Expert"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Key projects I have worked on",
+    "viewDetails": "View Details",
+    "viewLive": "View Live",
+    "viewCode": "View Code",
+    "allProjects": "View All Projects",
+    "filters": {
+      "all": "All",
+      "web": "Web Apps",
+      "sport": "Sport",
+      "mobile": "Mobile",
+      "ui": "UI/UX",
+      "open-source": "Open Source"
+    },
+    "sort": {
+      "date": "By Date",
+      "name": "By Name",
+      "tech": "By Technology"
+    },
+    "data": {
+      "playsport": {
+        "title": "PlaySport - Sports Platform",
+        "description": "Sports platform for booking sports facilities with interactive map, payment system and training management.",
+        "highlights": [
+          "Fixed QA bugs related to styles and mobile display",
+          "Created a page for viewing past training sessions",
+          "Developed reusable components: confirm dialog, dateRangeSelector, filter, search",
+          "Created a page for viewing payments",
+          "Added the ability to switch between Google Maps and Leaflet Maps using factory pattern",
+          "Added pagination (Front End)",
+          "Connected PWA functionality"
+        ]
+      }
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "My professional journey",
+    "present": "Present",
+    "keyAchievements": "Key Achievements",
+    "jobs": {
+      "metaart": {
+        "title": "Front End Developer",
+        "company": "MetaArt",
+        "description": "Working on a project to fix QA bugs, create new components and pages. Development of reusable components and adding new functionality.",
+        "achievements": [
+          "Fixed QA bugs related to styles, validation and mobile display",
+          "Created a page for viewing past training sessions",
+          "Developed reusable components: confirm dialog, dateRangeSelector, filter, search",
+          "Created a page for viewing payments",
+          "Added the ability to switch between Google Maps and Leaflet Maps using factory",
+          "Added pagination (Front End)",
+          "Connected PWA"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get In Touch",
+    "getInTouch": "Get In Touch",
+    "longDescription": "Ready to discuss new collaboration opportunities, interesting projects or just chat about frontend development, new technologies and web development. I'll be happy to hear from you and discuss possibilities for working together on interesting tasks!",
+    "description": "Ready to collaborate on interesting projects",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "form": {
+      "placeholders": {
+        "name": "Your Name",
+        "email": "your.email@example.com",
+        "message": "Write your message..."
+      }
+    },
+    "labels": {
+      "email": "Email",
+      "phone": "Phone",
+      "telegram": "Telegram",
+      "github": "GitHub"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "builtWith": "Built with",
+    "quickLinks": "Quick Links",
+    "social": "Social Media"
+  }
+}

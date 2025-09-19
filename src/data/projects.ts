@@ -1,5 +1,24 @@
 import type { Project } from '../types';
+import type { TFunction } from 'i18next';
 
+export const getProjectsData = (t: TFunction): Project[] => [
+  {
+    id: 1,
+    title: t('projects.data.playsport.title'),
+    description: t('projects.data.playsport.description'),
+    image: "/assets/images/projects/PlaySport.png",
+    tech: ["React", "TypeScript", "Redux", "Google Maps", "Leaflet", "PWA"],
+    category: ["web", "sport"],
+    year: 2025,
+    status: "completed",
+    demoUrl: "https://stage.playsport.com.ua/",
+    repoUrl: undefined,
+    highlights: t('projects.data.playsport.highlights', { returnObjects: true }) as string[],
+    featured: true
+  }
+];
+
+// Deprecated: use getProjectsData instead
 export const projectsData: Project[] = [
   {
     id: 1,

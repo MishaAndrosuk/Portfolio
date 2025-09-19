@@ -21,9 +21,10 @@ import {
   GitHub,
   Sort,
 } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import type { Project, FilterType, SortType } from '../../types';
-import { projectsData } from '../../data/projects';
+import { getProjectsData } from '../../data/projects';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
 
@@ -35,22 +36,25 @@ const Projects: React.FC<ProjectsProps> = () => {
   const [sortBy, setSortBy] = useState<SortType>('date');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useTranslation();
   const theme = useTheme();
 
   const filters: { value: FilterType; label: string; icon: React.ReactNode }[] = [
-    { value: 'all', label: 'Всі', icon: null },
-    { value: 'web', label: 'Web Apps', icon: <Web /> },
-    { value: 'sport', label: 'Спорт', icon: <SportsBasketball /> },
-    { value: 'mobile', label: 'Mobile', icon: <PhoneAndroid /> },
-    { value: 'ui', label: 'UI/UX', icon: <Brush /> },
-    { value: 'open-source', label: 'Open Source', icon: <GitHub /> },
+    { value: 'all', label: t('projects.filters.all'), icon: null },
+    { value: 'web', label: t('projects.filters.web'), icon: <Web /> },
+    { value: 'sport', label: t('projects.filters.sport'), icon: <SportsBasketball /> },
+    { value: 'mobile', label: t('projects.filters.mobile'), icon: <PhoneAndroid /> },
+    { value: 'ui', label: t('projects.filters.ui'), icon: <Brush /> },
+    { value: 'open-source', label: t('projects.filters.open-source'), icon: <GitHub /> },
   ];
 
   const sortOptions: { value: SortType; label: string }[] = [
-    { value: 'date', label: 'За датою' },
-    { value: 'name', label: 'За назвою' },
-    { value: 'tech', label: 'За технологією' },
+    { value: 'date', label: t('projects.sort.date') },
+    { value: 'name', label: t('projects.sort.name') },
+    { value: 'tech', label: t('projects.sort.tech') },
   ];
+
+  const projectsData = useMemo(() => getProjectsData(t), [t]);
 
   const filteredAndSortedProjects = useMemo(() => {
     let filtered = projectsData;
@@ -128,7 +132,7 @@ const Projects: React.FC<ProjectsProps> = () => {
                 color: 'text.primary',
               }}
             >
-              Проєкти
+              {t('projects.title')}
             </Typography>
             <Typography
               variant="h6"
@@ -138,7 +142,7 @@ const Projects: React.FC<ProjectsProps> = () => {
                 mx: 'auto',
               }}
             >
-              Портфоліо моїх останніх робіт
+              {t('projects.subtitle')}
             </Typography>
           </Box>
 

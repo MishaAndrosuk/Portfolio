@@ -19,12 +19,14 @@ import {
   Telegram,
   GitHub,
 } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 
 interface ContactProps {}
 
 const Contact: React.FC<ContactProps> = () => {
   const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.3 });
+  const { t } = useTranslation();
   const theme = useTheme();
 
   const contactLinks = [
@@ -32,25 +34,25 @@ const Contact: React.FC<ContactProps> = () => {
       href: 'mailto:androsukmisa3@gmail.com',
       icon: <Email />,
       text: 'androsukmisa3@gmail.com',
-      label: 'Email'
+      label: t('contact.labels.email')
     },
     {
       href: 'tel:+380681263042',
       icon: <Phone />,
       text: '+38 (068) 126-30-42',
-      label: 'Телефон'
+      label: t('contact.labels.phone')
     },
     {
       href: 'https://t.me/qwichsj',
       icon: <Telegram />,
       text: 'Telegram',
-      label: 'Telegram'
+      label: t('contact.labels.telegram')
     },
     {
       href: 'https://github.com/MishaAndrosuk',
       icon: <GitHub />,
       text: 'GitHub',
-      label: 'GitHub'
+      label: t('contact.labels.github')
     }
   ];
 
@@ -84,7 +86,7 @@ const Contact: React.FC<ContactProps> = () => {
               color: 'text.primary',
             }}
           >
-            Контакти
+            {t('contact.title')}
           </Typography>
           <Typography
             variant="h6"
@@ -94,7 +96,7 @@ const Contact: React.FC<ContactProps> = () => {
               mx: 'auto',
             }}
           >
-            Зв'яжіться зі мною
+            {t('contact.subtitle')}
           </Typography>
         </Box>
 
@@ -124,7 +126,7 @@ const Contact: React.FC<ContactProps> = () => {
                       textAlign: 'center',
                     }}
                   >
-                    Зв'язатися зі мною
+                    {t('contact.getInTouch')}
                   </Typography>
 
                   <Typography
@@ -137,9 +139,7 @@ const Contact: React.FC<ContactProps> = () => {
                       fontSize: '1.1rem',
                     }}
                   >
-                    Готовий обговорити нові можливості співпраці, цікаві проєкти або просто поспілкуватися
-                    про фронтенд розробку, нові технології та веб-розробку. Буду радий почути від вас і
-                    обговорити можливості для спільної роботи над цікавими завданнями!
+                    {t('contact.longDescription')}
                   </Typography>
 
                   <List sx={{ p: 0 }}>

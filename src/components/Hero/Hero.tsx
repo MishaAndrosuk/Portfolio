@@ -135,7 +135,7 @@ const Hero: React.FC<HeroProps> = () => {
                   variant="outlined"
                   size="large"
                   startIcon={<Download />}
-                  href="/assets/Resume.pdf"
+                  href="/assets/CV.pdf"
                   download
                   sx={{
                     py: 1.5,

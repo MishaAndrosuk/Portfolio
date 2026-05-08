@@ -179,7 +179,7 @@ const Header: React.FC<HeaderProps> = () => {
               </IconButton>
 
               <Button
-                href="/assets/Resume.pdf"
+                href="/assets/CV.pdf"
                 download
                 variant="contained"
                 startIcon={<Download />}

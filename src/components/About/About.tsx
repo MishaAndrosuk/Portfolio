@@ -26,7 +26,7 @@ const About: React.FC<AboutProps> = () => {
 
   const skills = ['JavaScript', 'TypeScript', 'React', 'Redux', 'HTML5', 'CSS3', 'GitHub'];
   const stats = [
-    { number: 1, label: t('about.stats.experience'), icon: <Timeline /> },
+    { number: 2, label: t('about.stats.experience'), icon: <Timeline /> },
     { number: 7, label: t('about.stats.technologies'), suffix: '+', icon: <Code /> },
     { number: 1, label: t('about.stats.companies'), icon: <Business /> },
   ];
@@ -185,7 +185,7 @@ const About: React.FC<AboutProps> = () => {
                         <Typography
                           variant="h4"
                           sx={{
-                            fontWeight: 700,
+                            fontWeight: 800,
                             color: 'primary.main',
                             mb: 1,
                           }}

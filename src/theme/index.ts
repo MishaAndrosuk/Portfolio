@@ -132,6 +132,35 @@ const buildOptions = (p: Palette, mode: 'light' | 'dark'): ThemeOptions => ({
         },
       },
     },
+    MuiTextField: {
+      defaultProps: { variant: 'outlined' },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          borderRadius: 10,
+          backgroundColor: p.bg,
+          '& fieldset': { borderColor: p.border },
+          '&:hover fieldset': { borderColor: p.borderStrong },
+          '&.Mui-focused fieldset': { borderColor: p.accent, borderWidth: 2 },
+        },
+        input: { color: p.ink },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: p.inkMuted,
+          '&.Mui-focused': { color: p.accent },
+        },
+      },
+    },
+    MuiFormHelperText: {
+      styleOverrides: {
+        // Резервуємо рядок під помилку, щоб поля не стрибали під час валідації
+        root: { marginLeft: 2, minHeight: '1.25em' },
+      },
+    },
     MuiTooltip: {
       styleOverrides: {
         tooltip: {

@@ -10,7 +10,6 @@
   },
   "actions": {
     "contactMe": "Kontakt aufnehmen",
-    "writeEmail": "E-Mail schreiben",
     "downloadCV": "Lebenslauf herunterladen",
     "cv": "Lebenslauf",
     "viewProjects": "Projekte ansehen",
@@ -53,7 +52,10 @@
       "Hosting und Deployment übernehme ich ebenfalls selbst: Ich bringe Frontends auf Microsoft Azure und AWS, richte Domains, SSL und CI/CD ein, damit Änderungen ohne manuelle Schritte in die Produktion gelangen."
     ],
     "languagesTitle": "Sprachen",
-    "languages": ["Englisch — Advanced", "Ukrainisch — Muttersprache"],
+    "languages": [
+      "Englisch — Advanced",
+      "Ukrainisch — Muttersprache"
+    ],
     "locationTitle": "Standort",
     "remote": "Offen für Remote-Arbeit",
     "education": {
@@ -134,12 +136,24 @@
       "azure": {
         "name": "Microsoft Azure",
         "description": "Deployment und Hosting von Frontend-Anwendungen im Azure-Ökosystem.",
-        "services": ["Static Web Apps", "App Service", "Eigene Domains", "SSL-Zertifikate", "Deployment aus GitHub"]
+        "services": [
+          "Static Web Apps",
+          "App Service",
+          "Eigene Domains",
+          "SSL-Zertifikate",
+          "Deployment aus GitHub"
+        ]
       },
       "aws": {
         "name": "Amazon Web Services",
         "description": "Statisches Hosting und virtuelle Server für SPAs und Frontend-Anwendungen.",
-        "services": ["S3", "CloudFront (CDN)", "EC2", "DNS & Domains", "SSL-Zertifikate"]
+        "services": [
+          "S3",
+          "CloudFront (CDN)",
+          "EC2",
+          "DNS & Domains",
+          "SSL-Zertifikate"
+        ]
       }
     },
     "capabilitiesTitle": "Was das konkret bringt",
@@ -211,7 +225,27 @@
     "title": "Sprechen wir über eine Zusammenarbeit",
     "subtitle": "Offen für Angebote, Projekte oder einfach ein gutes Gespräch über Frontend.",
     "headline": "Schreiben Sie mir — wir besprechen die Aufgabe",
-    "lead": "Sie suchen einen Frontend-Entwickler fürs Team, brauchen ein neues Feature oder eine Website, die gebaut und in die Cloud deployt wird — erzählen Sie mir davon. Am schnellsten erreichen Sie mich per E-Mail oder Telegram."
+    "lead": "Sie suchen einen Frontend-Entwickler fürs Team, brauchen ein neues Feature oder eine Website, die gebaut und in die Cloud deployt wird — erzählen Sie mir davon. Ich antworte an die Adresse, die Sie hier hinterlassen.",
+    "directTitle": "ODER DIREKT",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "form": {
+      "name": "Ihr Name",
+      "nameError": "Bitte nennen Sie Ihren Namen",
+      "email": "E-Mail für die Antwort",
+      "emailError": "Diese Adresse sieht nicht korrekt aus",
+      "message": "Nachricht",
+      "messagePlaceholder": "Ein paar Worte zur Aufgabe, zum Team oder zur Stelle…",
+      "messageError": "Bitte beschreiben Sie die Aufgabe kurz",
+      "submit": "Nachricht senden",
+      "submitting": "Wird gesendet…",
+      "privacy": "Mit * markierte Felder sind Pflichtfelder.",
+      "successTitle": "Nachricht gesendet",
+      "successText": "Vielen Dank! Ich lese sie in Kürze und antworte an Ihre Adresse.",
+      "sendAnother": "Weitere senden",
+      "errorText": "Die Nachricht konnte nicht gesendet werden. Bitte erneut versuchen oder direkt schreiben:",
+      "botField": "Dieses Feld bitte leer lassen"
+    }
   },
   "footer": {
     "rights": "Alle Rechte vorbehalten."

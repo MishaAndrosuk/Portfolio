@@ -74,6 +74,20 @@
     </script>
 </head>
 <body>
+    <!--
+      Netlify шукає форми, розбираючи HTML задеплоєного сайту. Форма з React
+      зʼявляється лише після запуску JS, тож її статичну копію треба лишити тут —
+      інакше сабміти нікуди не потраплять. Поля мають збігатися з тими,
+      що надсилає ContactForm.tsx.
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+      <input type="hidden" name="subject" />
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 </body>

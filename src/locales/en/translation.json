@@ -10,7 +10,6 @@
   },
   "actions": {
     "contactMe": "Get in touch",
-    "writeEmail": "Send an email",
     "downloadCV": "Download CV",
     "cv": "CV",
     "viewProjects": "View projects",
@@ -53,7 +52,10 @@
       "I also own hosting and deployment — I ship frontends to Microsoft Azure and AWS, set up domains, SSL and CI/CD so changes reach production without manual steps."
     ],
     "languagesTitle": "Languages",
-    "languages": ["English — Advanced", "Ukrainian — Native"],
+    "languages": [
+      "English — Advanced",
+      "Ukrainian — Native"
+    ],
     "locationTitle": "Location",
     "remote": "Open to remote work",
     "education": {
@@ -134,12 +136,24 @@
       "azure": {
         "name": "Microsoft Azure",
         "description": "Deploying and hosting frontend applications in the Azure ecosystem.",
-        "services": ["Static Web Apps", "App Service", "Custom domains", "SSL certificates", "Deploy from GitHub"]
+        "services": [
+          "Static Web Apps",
+          "App Service",
+          "Custom domains",
+          "SSL certificates",
+          "Deploy from GitHub"
+        ]
       },
       "aws": {
         "name": "Amazon Web Services",
         "description": "Static hosting and virtual machines for SPAs and frontend applications.",
-        "services": ["S3", "CloudFront (CDN)", "EC2", "DNS & domains", "SSL certificates"]
+        "services": [
+          "S3",
+          "CloudFront (CDN)",
+          "EC2",
+          "DNS & domains",
+          "SSL certificates"
+        ]
       }
     },
     "capabilitiesTitle": "What that means in practice",
@@ -211,7 +225,27 @@
     "title": "Let's talk about working together",
     "subtitle": "Open to offers, projects, or just a good conversation about frontend.",
     "headline": "Drop me a line and let's discuss it",
-    "lead": "Looking for a frontend developer for your team, need a new feature, or want a site built and deployed to the cloud — tell me about it. Email and Telegram are the fastest ways to reach me."
+    "lead": "Looking for a frontend developer for your team, need a new feature, or want a site built and deployed to the cloud — tell me about it. I'll reply to the address you leave below.",
+    "directTitle": "OR DIRECTLY",
+    "copy": "Copy",
+    "copied": "Copied",
+    "form": {
+      "name": "Your name",
+      "nameError": "Please tell me your name",
+      "email": "Email for the reply",
+      "emailError": "That address looks off",
+      "message": "Message",
+      "messagePlaceholder": "A few words about the task, the team or the role…",
+      "messageError": "Please describe the task in a few words",
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "privacy": "Fields marked * are required.",
+      "successTitle": "Message sent",
+      "successText": "Thank you! I'll read it shortly and reply to your address.",
+      "sendAnother": "Send another",
+      "errorText": "The message could not be sent. Please try again or write directly:",
+      "botField": "Leave this field empty"
+    }
   },
   "footer": {
     "rights": "All rights reserved."

@@ -1,0 +1,260 @@
+{
+  "nav": {
+    "label": "Main navigation",
+    "about": "About",
+    "skills": "Skills",
+    "cloud": "Hosting & Deploy",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "actions": {
+    "contactMe": "Get in touch",
+    "writeEmail": "Send an email",
+    "downloadCV": "Download CV",
+    "cv": "CV",
+    "viewProjects": "View projects",
+    "toggleTheme": "Toggle theme",
+    "changeLanguage": "Change language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "backToTop": "Back to top",
+    "skipToContent": "Skip to content",
+    "email": "Email",
+    "phone": "Phone",
+    "telegram": "Telegram",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "hero": {
+    "name": "Mykhailo Androshchuk",
+    "roles": [
+      "Front-End Developer",
+      "React · TypeScript",
+      "Cloud Deployment",
+      "Responsive & Accessible UI"
+    ],
+    "lead": "I build fast, responsive interfaces with React and TypeScript — and take them all the way to production: build, deploy to Azure or AWS, domain and SSL.",
+    "photoAlt": "Mykhailo Androshchuk, Front-End Developer — portrait photo by the sea",
+    "stats": {
+      "years_one": "year of commercial experience",
+      "years_other": "years of commercial experience",
+      "stack": "core stack",
+      "cloud": "hosting & deploy"
+    }
+  },
+  "about": {
+    "eyebrow": "ABOUT",
+    "title": "Interfaces people actually enjoy using",
+    "subtitle": "Front-End Developer focused on React, TypeScript and clean, maintainable code.",
+    "paragraphs": [
+      "I specialise in React and TypeScript: reusable UI components, responsive pages and interfaces that work just as well on a phone as on a large screen.",
+      "Two years of commercial experience on the MetaArt product team, working side by side with designers and backend developers: new pages and features, REST API integration, state management, performance optimisation and closing QA issues.",
+      "I also own hosting and deployment — I ship frontends to Microsoft Azure and AWS, set up domains, SSL and CI/CD so changes reach production without manual steps."
+    ],
+    "languagesTitle": "Languages",
+    "languages": ["English — Advanced", "Ukrainian — Native"],
+    "locationTitle": "Location",
+    "remote": "Open to remote work",
+    "education": {
+      "degree": "Software Engineer",
+      "school": "Computer Academy IT STEP, Kharkiv",
+      "period": "05/2023 — 06/2025"
+    }
+  },
+  "skills": {
+    "eyebrow": "SKILLS",
+    "title": "The tools I work with every day",
+    "subtitle": "A stack built around the React ecosystem — from components to deployment.",
+    "groups": {
+      "frontend": {
+        "title": "Frontend",
+        "items": [
+          "React",
+          "TypeScript",
+          "JavaScript (ES6+)",
+          "Angular",
+          "HTML5",
+          "CSS3",
+          "Responsive Design",
+          "PWA",
+          "Redux Toolkit",
+          "RTK Query",
+          "REST API Integration",
+          "Form validation"
+        ]
+      },
+      "backend": {
+        "title": "Backend",
+        "items": [
+          "Node.js",
+          "Next.js",
+          "Express",
+          "REST API",
+          "API Routes",
+          "SSR / SSG",
+          "Middleware",
+          "SQL",
+          "PostgreSQL",
+          "JWT authentication",
+          "Error handling"
+        ]
+      },
+      "cloud": {
+        "title": "Cloud / DevOps",
+        "items": [
+          "Microsoft Azure",
+          "AWS",
+          "Static Web Apps",
+          "S3 + CloudFront",
+          "EC2",
+          "CI/CD",
+          "Domains & SSL",
+          "Docker"
+        ]
+      },
+      "tools": {
+        "title": "Tools & Practices",
+        "items": [
+          "Git & GitHub",
+          "Vite",
+          "Code review",
+          "Refactoring",
+          "Cross-browser compatibility",
+          "Performance optimisation"
+        ]
+      }
+    }
+  },
+  "cloud": {
+    "eyebrow": "HOSTING & DEPLOY",
+    "title": "From local build to a live domain",
+    "subtitle": "I don't stop at \"it builds locally\": I deploy and host sites on both Microsoft Azure and AWS.",
+    "platforms": {
+      "azure": {
+        "name": "Microsoft Azure",
+        "description": "Deploying and hosting frontend applications in the Azure ecosystem.",
+        "services": ["Static Web Apps", "App Service", "Custom domains", "SSL certificates", "Deploy from GitHub"]
+      },
+      "aws": {
+        "name": "Amazon Web Services",
+        "description": "Static hosting and virtual machines for SPAs and frontend applications.",
+        "services": ["S3", "CloudFront (CDN)", "EC2", "DNS & domains", "SSL certificates"]
+      }
+    },
+    "capabilitiesTitle": "What that means in practice",
+    "capabilities": [
+      "CI/CD: push to a branch, get an automatic build and release",
+      "Custom domain and HTTPS setup",
+      "Static assets served through a CDN for fast loading",
+      "Separate environments: preview builds and production",
+      "SPA routing, caching and header configuration",
+      "Dockerised builds for repeatable deployments"
+    ]
+  },
+  "experience": {
+    "eyebrow": "EXPERIENCE",
+    "title": "Where and what I worked on",
+    "subtitle": "Commercial development inside a product team.",
+    "achievementsTitle": "Key results",
+    "current": {
+      "role": "Front End Developer",
+      "company": "MetaArt",
+      "mode": "Remote",
+      "summary": "Product development as part of a team: new pages and features, backend integration, support and refactoring of an existing codebase.",
+      "achievements": [
+        "Built reusable, scalable UI components — confirm dialog, date range selector, filter, search — used across multiple product pages.",
+        "Created the payment tracking page and the past training sessions page.",
+        "Integrated Google Maps and Leaflet Maps via the Factory pattern, so the map provider can be swapped without touching page code.",
+        "Added frontend pagination and PWA support.",
+        "Integrated REST APIs and asynchronous data fetching, and set up application state management.",
+        "Optimised application performance and cross-browser compatibility.",
+        "Implemented form validation and error handling.",
+        "Improved responsive behaviour and closed QA issues related to styling and mobile layout.",
+        "Refactored the existing codebase to make it easier to read and maintain.",
+        "Collaborated with designers and backend developers to deliver user-friendly interfaces."
+      ]
+    }
+  },
+  "value": {
+    "eyebrow": "WHY ME",
+    "title": "What the team gets",
+    "items": [
+      {
+        "title": "Fast ramp-up in a codebase",
+        "description": "I find my way around unfamiliar code and pick up work — bug fixes, refactoring, new features — without a long warm-up."
+      },
+      {
+        "title": "Components you don't rewrite",
+        "description": "I build reusable UI pieces, so the next pages come together faster and without duplicated code."
+      },
+      {
+        "title": "From mockup to production",
+        "description": "I cover the whole path: markup, API integration, build, cloud deployment, domain and SSL."
+      },
+      {
+        "title": "Fewer bounces from QA",
+        "description": "Responsiveness, cross-browser behaviour, form validation and error handling — checked before the task reaches testing."
+      },
+      {
+        "title": "A shared language with design and backend",
+        "description": "I'm used to aligning layouts and API contracts directly — fewer iterations, less guesswork."
+      },
+      {
+        "title": "Advanced English",
+        "description": "Comfortable with English documentation and working in an international team."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "CONTACT",
+    "title": "Let's talk about working together",
+    "subtitle": "Open to offers, projects, or just a good conversation about frontend.",
+    "headline": "Drop me a line and let's discuss it",
+    "lead": "Looking for a frontend developer for your team, need a new feature, or want a site built and deployed to the cloud — tell me about it. Email and Telegram are the fastest ways to reach me."
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Key projects I have worked on",
+    "viewDetails": "Details",
+    "viewLive": "View",
+    "viewCode": "Code",
+    "allProjects": "View all projects",
+    "filters": {
+      "all": "All",
+      "web": "Web Apps",
+      "sport": "Sport",
+      "mobile": "Mobile",
+      "ui": "UI/UX",
+      "open-source": "Open Source"
+    },
+    "sort": {
+      "date": "By date",
+      "name": "By name",
+      "tech": "By technology"
+    },
+    "data": {
+      "playsport": {
+        "title": "PlaySport — sports platform",
+        "description": "A platform for booking sports facilities with an interactive map, payments and training management.",
+        "highlights": [
+          "Fixed QA issues related to styling and mobile layout",
+          "Created a page for reviewing past training sessions",
+          "Built reusable components: confirm dialog, date range selector, filter, search",
+          "Created the payment tracking page",
+          "Added switching between Google Maps and Leaflet Maps using the Factory pattern",
+          "Added frontend pagination",
+          "Added PWA support"
+        ]
+      }
+    }
+  },
+  "common": {
+    "featured": "Featured",
+    "openProjectDetails": "Open project details",
+    "projectScreenshot": "project screenshot"
+  }
+}

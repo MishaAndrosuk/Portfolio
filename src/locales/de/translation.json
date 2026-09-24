@@ -1,0 +1,260 @@
+{
+  "nav": {
+    "label": "Hauptnavigation",
+    "about": "Über mich",
+    "skills": "Skills",
+    "cloud": "Hosting & Deployment",
+    "projects": "Projekte",
+    "experience": "Erfahrung",
+    "contact": "Kontakt"
+  },
+  "actions": {
+    "contactMe": "Kontakt aufnehmen",
+    "writeEmail": "E-Mail schreiben",
+    "downloadCV": "Lebenslauf herunterladen",
+    "cv": "Lebenslauf",
+    "viewProjects": "Projekte ansehen",
+    "toggleTheme": "Design wechseln",
+    "changeLanguage": "Sprache wechseln",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "backToTop": "Nach oben",
+    "skipToContent": "Zum Inhalt springen",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "telegram": "Telegram",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "hero": {
+    "name": "Mykhailo Androshchuk",
+    "roles": [
+      "Front-End Developer",
+      "React · TypeScript",
+      "Cloud Deployment",
+      "Responsive & Accessible UI"
+    ],
+    "lead": "Ich baue schnelle, responsive Interfaces mit React und TypeScript — und bringe sie bis in die Produktion: Build, Deployment auf Azure oder AWS, Domain und SSL.",
+    "photoAlt": "Mykhailo Androshchuk, Front-End Developer — Porträtfoto an der Meeresküste",
+    "stats": {
+      "years_one": "Jahr Berufserfahrung",
+      "years_other": "Jahre Berufserfahrung",
+      "stack": "Haupt-Stack",
+      "cloud": "Hosting & Deployment"
+    }
+  },
+  "about": {
+    "eyebrow": "ÜBER MICH",
+    "title": "Oberflächen, die man gerne benutzt",
+    "subtitle": "Front-End Developer mit Fokus auf React, TypeScript und sauberen, wartbaren Code.",
+    "paragraphs": [
+      "Ich arbeite schwerpunktmäßig mit React und TypeScript: wiederverwendbare UI-Komponenten, responsive Seiten und Interfaces, die auf dem Smartphone genauso gut funktionieren wie auf großen Bildschirmen.",
+      "Zwei Jahre Berufserfahrung im Produktteam von MetaArt — Seite an Seite mit Designern und Backend-Entwicklern: neue Seiten und Features, REST-API-Integration, State-Management, Performance-Optimierung und das Schließen von QA-Bugs.",
+      "Hosting und Deployment übernehme ich ebenfalls selbst: Ich bringe Frontends auf Microsoft Azure und AWS, richte Domains, SSL und CI/CD ein, damit Änderungen ohne manuelle Schritte in die Produktion gelangen."
+    ],
+    "languagesTitle": "Sprachen",
+    "languages": ["Englisch — Advanced", "Ukrainisch — Muttersprache"],
+    "locationTitle": "Standort",
+    "remote": "Offen für Remote-Arbeit",
+    "education": {
+      "degree": "Software Engineer",
+      "school": "Computer Academy IT STEP, Charkiw",
+      "period": "05/2023 — 06/2025"
+    }
+  },
+  "skills": {
+    "eyebrow": "SKILLS",
+    "title": "Technologien, mit denen ich täglich arbeite",
+    "subtitle": "Ein Stack rund um das React-Ökosystem — von Komponenten bis zum Deployment.",
+    "groups": {
+      "frontend": {
+        "title": "Frontend",
+        "items": [
+          "React",
+          "TypeScript",
+          "JavaScript (ES6+)",
+          "Angular",
+          "HTML5",
+          "CSS3",
+          "Responsive Design",
+          "PWA",
+          "Redux Toolkit",
+          "RTK Query",
+          "REST-API-Integration",
+          "Formularvalidierung"
+        ]
+      },
+      "backend": {
+        "title": "Backend",
+        "items": [
+          "Node.js",
+          "Next.js",
+          "Express",
+          "REST API",
+          "API Routes",
+          "SSR / SSG",
+          "Middleware",
+          "SQL",
+          "PostgreSQL",
+          "JWT-Authentifizierung",
+          "Fehlerbehandlung"
+        ]
+      },
+      "cloud": {
+        "title": "Cloud / DevOps",
+        "items": [
+          "Microsoft Azure",
+          "AWS",
+          "Static Web Apps",
+          "S3 + CloudFront",
+          "EC2",
+          "CI/CD",
+          "Domains & SSL",
+          "Docker"
+        ]
+      },
+      "tools": {
+        "title": "Tools & Praktiken",
+        "items": [
+          "Git & GitHub",
+          "Vite",
+          "Code Review",
+          "Refactoring",
+          "Cross-Browser-Kompatibilität",
+          "Performance-Optimierung"
+        ]
+      }
+    }
+  },
+  "cloud": {
+    "eyebrow": "HOSTING & DEPLOYMENT",
+    "title": "Vom lokalen Build zur echten Domain",
+    "subtitle": "Ich höre nicht bei „läuft lokal“ auf: Ich deploye und hoste Websites sowohl auf Microsoft Azure als auch auf AWS.",
+    "platforms": {
+      "azure": {
+        "name": "Microsoft Azure",
+        "description": "Deployment und Hosting von Frontend-Anwendungen im Azure-Ökosystem.",
+        "services": ["Static Web Apps", "App Service", "Eigene Domains", "SSL-Zertifikate", "Deployment aus GitHub"]
+      },
+      "aws": {
+        "name": "Amazon Web Services",
+        "description": "Statisches Hosting und virtuelle Server für SPAs und Frontend-Anwendungen.",
+        "services": ["S3", "CloudFront (CDN)", "EC2", "DNS & Domains", "SSL-Zertifikate"]
+      }
+    },
+    "capabilitiesTitle": "Was das konkret bringt",
+    "capabilities": [
+      "CI/CD: Push in einen Branch — automatischer Build und Release",
+      "Einrichtung eigener Domains und HTTPS",
+      "Auslieferung statischer Dateien über ein CDN für kurze Ladezeiten",
+      "Getrennte Umgebungen: Preview-Builds und Produktion",
+      "Konfiguration von SPA-Routing, Caching und Headern",
+      "Docker-Builds für reproduzierbare Deployments"
+    ]
+  },
+  "experience": {
+    "eyebrow": "ERFAHRUNG",
+    "title": "Wo und woran ich gearbeitet habe",
+    "subtitle": "Kommerzielle Entwicklung in einem Produktteam.",
+    "achievementsTitle": "Wichtigste Ergebnisse",
+    "current": {
+      "role": "Front End Developer",
+      "company": "MetaArt",
+      "mode": "Remote",
+      "summary": "Produktentwicklung im Team: neue Seiten und Features, Backend-Anbindung, Pflege und Refactoring einer bestehenden Codebasis.",
+      "achievements": [
+        "Wiederverwendbare, skalierbare UI-Komponenten entwickelt — Confirm Dialog, Date Range Selector, Filter, Suche — im Einsatz auf mehreren Produktseiten.",
+        "Seite für die Zahlungsübersicht und Seite für vergangene Trainingseinheiten erstellt.",
+        "Google Maps und Leaflet Maps über das Factory-Pattern integriert, sodass der Kartenanbieter ohne Änderungen am Seitencode getauscht werden kann.",
+        "Frontend-Pagination und PWA-Unterstützung hinzugefügt.",
+        "REST-APIs und asynchrones Laden von Daten integriert sowie das State-Management aufgesetzt.",
+        "Performance der Anwendung und Cross-Browser-Kompatibilität optimiert.",
+        "Formularvalidierung und Fehlerbehandlung umgesetzt.",
+        "Responsives Verhalten verbessert und QA-Bugs zu Styling und mobiler Darstellung geschlossen.",
+        "Bestehenden Code refactored, um Lesbarkeit und Wartbarkeit zu erhöhen.",
+        "Mit Designern und Backend-Entwicklern an benutzerfreundlichen Oberflächen gearbeitet."
+      ]
+    }
+  },
+  "value": {
+    "eyebrow": "MEIN BEITRAG",
+    "title": "Was das Team davon hat",
+    "items": [
+      {
+        "title": "Schnelle Einarbeitung",
+        "description": "Ich finde mich in fremdem Code zurecht und übernehme Aufgaben — Bugfixes, Refactoring, neue Features — ohne lange Anlaufzeit."
+      },
+      {
+        "title": "Komponenten, die bleiben",
+        "description": "Ich baue wiederverwendbare UI-Bausteine, damit die nächsten Seiten schneller und ohne doppelten Code entstehen."
+      },
+      {
+        "title": "Vom Design bis zur Produktion",
+        "description": "Ich decke den gesamten Weg ab: Umsetzung, API-Anbindung, Build, Cloud-Deployment, Domain und SSL."
+      },
+      {
+        "title": "Weniger Rückläufer aus der QA",
+        "description": "Responsiveness, Cross-Browser-Verhalten, Formularvalidierung und Fehlerbehandlung prüfe ich, bevor das Ticket ins Testing geht."
+      },
+      {
+        "title": "Gemeinsame Sprache mit Design und Backend",
+        "description": "Ich stimme Layouts und API-Verträge direkt ab — weniger Iterationen, weniger Rätselraten."
+      },
+      {
+        "title": "Englisch Advanced",
+        "description": "Souverän im Umgang mit englischer Dokumentation und in internationalen Teams."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "KONTAKT",
+    "title": "Sprechen wir über eine Zusammenarbeit",
+    "subtitle": "Offen für Angebote, Projekte oder einfach ein gutes Gespräch über Frontend.",
+    "headline": "Schreiben Sie mir — wir besprechen die Aufgabe",
+    "lead": "Sie suchen einen Frontend-Entwickler fürs Team, brauchen ein neues Feature oder eine Website, die gebaut und in die Cloud deployt wird — erzählen Sie mir davon. Am schnellsten erreichen Sie mich per E-Mail oder Telegram."
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "projects": {
+    "title": "Projekte",
+    "subtitle": "Wichtige Projekte, an denen ich gearbeitet habe",
+    "viewDetails": "Details",
+    "viewLive": "Ansehen",
+    "viewCode": "Code",
+    "allProjects": "Alle Projekte ansehen",
+    "filters": {
+      "all": "Alle",
+      "web": "Web Apps",
+      "sport": "Sport",
+      "mobile": "Mobile",
+      "ui": "UI/UX",
+      "open-source": "Open Source"
+    },
+    "sort": {
+      "date": "Nach Datum",
+      "name": "Nach Name",
+      "tech": "Nach Technologie"
+    },
+    "data": {
+      "playsport": {
+        "title": "PlaySport — Sportplattform",
+        "description": "Plattform zur Buchung von Sportanlagen mit interaktiver Karte, Zahlungen und Trainingsverwaltung.",
+        "highlights": [
+          "QA-Bugs zu Styling und mobiler Darstellung behoben",
+          "Seite für vergangene Trainingseinheiten erstellt",
+          "Wiederverwendbare Komponenten entwickelt: Confirm Dialog, Date Range Selector, Filter, Suche",
+          "Seite für die Zahlungsübersicht erstellt",
+          "Umschalten zwischen Google Maps und Leaflet Maps über das Factory-Pattern ergänzt",
+          "Frontend-Pagination hinzugefügt",
+          "PWA-Unterstützung integriert"
+        ]
+      }
+    }
+  },
+  "common": {
+    "featured": "Empfohlen",
+    "openProjectDetails": "Projektdetails öffnen",
+    "projectScreenshot": "Projekt-Screenshot"
+  }
+}

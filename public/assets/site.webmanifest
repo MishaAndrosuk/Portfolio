@@ -1,0 +1,17 @@
+{
+  "name": "Андрощук Михайло — Front-End Developer",
+  "short_name": "M. Androshchuk",
+  "description": "Портфоліо Front-End розробника: React, TypeScript, хостинг і деплой у Azure та AWS.",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/assets/images/avatar-256.jpg", "sizes": "256x256", "type": "image/jpeg" },
+    { "src": "/assets/images/avatar-512.jpg", "sizes": "512x512", "type": "image/jpeg" }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#F7F6F3",
+  "background_color": "#F7F6F3",
+  "lang": "uk",
+  "categories": ["business", "portfolio", "developer"]
+}

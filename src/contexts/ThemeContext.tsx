@@ -1,8 +1,9 @@
 /* eslint-disable react-refresh/only-export-components --
    провайдер і його хук живуть поруч свідомо: це втрачає hot-reload лише для цього файлу */
-import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import React, { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { flushSync } from 'react-dom';
 import { ThemeProvider as MuiThemeProvider, CssBaseline } from '@mui/material';
-import { lightTheme, darkTheme } from '../theme';
+import { lightTheme, darkTheme, THEME_TRANSITION_MS } from '../theme';
 import { lightPalette, darkPalette } from '../theme/palette';
 import GlobalStyles from '../theme/GlobalStyles';
 import type { ThemeContextType } from '../types';
@@ -28,6 +29,8 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     return saved === 'dark' ? 'dark' : 'light';
   });
 
+  const transitionTimer = useRef<number | undefined>(undefined);
+
   const palette = theme === 'light' ? lightPalette : darkPalette;
 
   useEffect(() => {
@@ -45,7 +48,31 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const value = useMemo<ThemeContextType>(
     () => ({
       theme,
-      toggleTheme: () => setTheme((prev) => (prev === 'light' ? 'dark' : 'light')),
+      toggleTheme: () => {
+        const next = theme === 'light' ? 'dark' : 'light';
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (reduced) {
+          setTheme(next);
+          return;
+        }
+
+        // Сучасні браузери: плавний перехід між «знімками» сторінки
+        if (typeof document.startViewTransition === 'function') {
+          document.startViewTransition(() => flushSync(() => setTheme(next)));
+          return;
+        }
+
+        // Запасний варіант: на мить вмикаємо CSS-переходи кольорів для всіх елементів
+        const root = document.documentElement;
+        root.classList.add('theme-transition');
+        setTheme(next);
+        window.clearTimeout(transitionTimer.current);
+        transitionTimer.current = window.setTimeout(
+          () => root.classList.remove('theme-transition'),
+          THEME_TRANSITION_MS
+        );
+      },
     }),
     [theme]
   );

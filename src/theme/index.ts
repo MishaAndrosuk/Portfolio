@@ -12,6 +12,9 @@ export const motion = {
   ease: 'cubic-bezier(0.22, 0.61, 0.36, 1)',
 } as const;
 
+/** Тривалість плавної зміни світлої/темної теми. */
+export const THEME_TRANSITION_MS = 450;
+
 const buildOptions = (p: Palette, mode: 'light' | 'dark'): ThemeOptions => ({
   palette: {
     mode,

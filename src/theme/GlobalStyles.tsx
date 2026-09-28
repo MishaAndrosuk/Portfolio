@@ -1,7 +1,7 @@
 import { GlobalStyles as MuiGlobalStyles } from '@mui/material';
 import { toCssVars } from './palette';
 import type { Palette } from './palette';
-import { motion } from './index';
+import { motion, THEME_TRANSITION_MS } from './index';
 
 interface Props {
   palette: Palette;
@@ -88,6 +88,26 @@ const GlobalStyles: React.FC<Props> = ({ palette }) => (
         fontWeight: 600,
         transition: `top ${motion.base} ${motion.ease}`,
         '&:focus': { top: 16 },
+      },
+
+      // Плавна зміна теми через View Transitions API: перехресне згасання знімків
+      '::view-transition-old(root), ::view-transition-new(root)': {
+        animationDuration: `${THEME_TRANSITION_MS}ms`,
+        animationTimingFunction: motion.ease,
+      },
+
+      // Запасний варіант для браузерів без View Transitions — клас вмикається лише на час зміни
+      '.theme-transition, .theme-transition *, .theme-transition *::before, .theme-transition *::after': {
+        transition: [
+          'background-color',
+          'border-color',
+          'color',
+          'fill',
+          'stroke',
+          'box-shadow',
+        ]
+          .map((p) => `${p} ${THEME_TRANSITION_MS}ms ${motion.ease}`)
+          .join(', ') + ' !important',
       },
 
       '@media (prefers-reduced-motion: reduce)': {

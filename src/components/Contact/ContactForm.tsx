@@ -1,5 +1,14 @@
 import React, { useId, useState } from 'react';
-import { Box, TextField, Button, Typography, Link, CircularProgress } from '@mui/material';
+import {
+  Box,
+  TextField,
+  Button,
+  Typography,
+  Link,
+  CircularProgress,
+  Snackbar,
+  Alert,
+} from '@mui/material';
 import { Send, CheckCircleOutline, ErrorOutline } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import { CONTACTS } from '../../config/site';
@@ -46,6 +55,7 @@ const ContactForm: React.FC = () => {
   const [status, setStatus] = useState<Status>('idle');
   // Приховане поле-пастка: люди його не бачать, боти зазвичай заповнюють
   const [botField, setBotField] = useState('');
+  const [toastOpen, setToastOpen] = useState(false);
 
   const validate = (): boolean => {
     const next: Partial<Values> = {};
@@ -84,164 +94,193 @@ const ContactForm: React.FC = () => {
       if (!response.ok) throw new Error(`Form submission failed: ${response.status}`);
       setValues(EMPTY);
       setStatus('success');
+      setToastOpen(true);
     } catch {
       setStatus('error');
     }
   };
 
+  // Тоаст живе поза гілками, щоб не перемонтовуватись при зміні статусу
+  const toast = (
+    <Snackbar
+      open={toastOpen}
+      autoHideDuration={5000}
+      onClose={(_, reason) => {
+        if (reason !== 'clickaway') setToastOpen(false);
+      }}
+      anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+    >
+      <Alert
+        onClose={() => setToastOpen(false)}
+        severity="success"
+        variant="filled"
+        icon={<CheckCircleOutline fontSize="inherit" />}
+        sx={{ width: '100%', alignItems: 'center', borderRadius: '12px', boxShadow: 6 }}
+      >
+        {t('contact.form.successTitle')}
+      </Alert>
+    </Snackbar>
+  );
+
   if (status === 'success') {
     return (
-      <Box
-        role="status"
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          gap: 2,
-          py: 3,
-        }}
-      >
-        <CheckCircleOutline sx={{ fontSize: 40, color: 'var(--c-accent)' }} aria-hidden="true" />
-        <Box>
-          <Typography variant="h4" component="p" sx={{ mb: 0.5 }}>
-            {t('contact.form.successTitle')}
-          </Typography>
-          <Typography variant="body2" sx={{ color: 'var(--c-ink-muted)' }}>
-            {t('contact.form.successText')}
-          </Typography>
+      <>
+        {toast}
+        <Box
+          role="status"
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            gap: 2,
+            py: 3,
+          }}
+        >
+          <CheckCircleOutline sx={{ fontSize: 40, color: 'var(--c-accent)' }} aria-hidden="true" />
+          <Box>
+            <Typography variant="h4" component="p" sx={{ mb: 0.5 }}>
+              {t('contact.form.successTitle')}
+            </Typography>
+            <Typography variant="body2" sx={{ color: 'var(--c-ink-muted)' }}>
+              {t('contact.form.successText')}
+            </Typography>
+          </Box>
+          <Button variant="outlined" onClick={() => setStatus('idle')}>
+            {t('contact.form.sendAnother')}
+          </Button>
         </Box>
-        <Button variant="outlined" onClick={() => setStatus('idle')}>
-          {t('contact.form.sendAnother')}
-        </Button>
-      </Box>
+      </>
     );
   }
 
   const submitting = status === 'submitting';
 
   return (
-    <Box
-      component="form"
-      name={FORM_NAME}
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      onSubmit={handleSubmit}
-      noValidate
-      sx={{ display: 'grid', gap: 2.5 }}
-    >
-      {/* Netlify визначає форму за цим полем */}
-      <input type="hidden" name="form-name" value={FORM_NAME} />
-      {/* Тема листа-сповіщення; %{submissionId} підставляє Netlify */}
-      <input type="hidden" name="subject" value={SUBJECT} />
+    <>
+      {toast}
+      <Box
+        component="form"
+        name={FORM_NAME}
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+        noValidate
+        sx={{ display: 'grid', gap: 2.5 }}
+      >
+        {/* Netlify визначає форму за цим полем */}
+        <input type="hidden" name="form-name" value={FORM_NAME} />
+        {/* Тема листа-сповіщення; %{submissionId} підставляє Netlify */}
+        <input type="hidden" name="subject" value={SUBJECT} />
 
-      {/* Пастка для ботів — прихована від людей і від зчитувачів екрана */}
-      <Box sx={{ position: 'absolute', left: '-9999px' }} aria-hidden="true">
-        <label>
-          {t('contact.form.botField')}
-          <input
-            tabIndex={-1}
-            autoComplete="off"
-            name="bot-field"
-            value={botField}
-            onChange={(e) => setBotField(e.target.value)}
+        {/* Пастка для ботів — прихована від людей і від зчитувачів екрана */}
+        <Box sx={{ position: 'absolute', left: '-9999px' }} aria-hidden="true">
+          <label>
+            {t('contact.form.botField')}
+            <input
+              tabIndex={-1}
+              autoComplete="off"
+              name="bot-field"
+              value={botField}
+              onChange={(e) => setBotField(e.target.value)}
+            />
+          </label>
+        </Box>
+
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 2.5 }}>
+          <TextField
+            id={`${id}-name`}
+            name="name"
+            label={t('contact.form.name')}
+            value={values.name}
+            onChange={handleChange('name')}
+            error={Boolean(errors.name)}
+            helperText={errors.name ?? ' '}
+            autoComplete="name"
+            required
+            fullWidth
+            disabled={submitting}
           />
-        </label>
-      </Box>
+          <TextField
+            id={`${id}-email`}
+            name="email"
+            type="email"
+            label={t('contact.form.email')}
+            value={values.email}
+            onChange={handleChange('email')}
+            error={Boolean(errors.email)}
+            helperText={errors.email ?? ' '}
+            autoComplete="email"
+            required
+            fullWidth
+            disabled={submitting}
+          />
+        </Box>
 
-      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 2.5 }}>
         <TextField
-          id={`${id}-name`}
-          name="name"
-          label={t('contact.form.name')}
-          value={values.name}
-          onChange={handleChange('name')}
-          error={Boolean(errors.name)}
-          helperText={errors.name ?? ' '}
-          autoComplete="name"
+          id={`${id}-message`}
+          name="message"
+          label={t('contact.form.message')}
+          placeholder={t('contact.form.messagePlaceholder')}
+          value={values.message}
+          onChange={handleChange('message')}
+          error={Boolean(errors.message)}
+          helperText={errors.message ?? ' '}
+          multiline
+          minRows={4}
           required
           fullWidth
           disabled={submitting}
         />
-        <TextField
-          id={`${id}-email`}
-          name="email"
-          type="email"
-          label={t('contact.form.email')}
-          value={values.email}
-          onChange={handleChange('email')}
-          error={Boolean(errors.email)}
-          helperText={errors.email ?? ' '}
-          autoComplete="email"
-          required
-          fullWidth
-          disabled={submitting}
-        />
-      </Box>
 
-      <TextField
-        id={`${id}-message`}
-        name="message"
-        label={t('contact.form.message')}
-        placeholder={t('contact.form.messagePlaceholder')}
-        value={values.message}
-        onChange={handleChange('message')}
-        error={Boolean(errors.message)}
-        helperText={errors.message ?? ' '}
-        multiline
-        minRows={4}
-        required
-        fullWidth
-        disabled={submitting}
-      />
-
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 2 }}>
-        <Button
-          type="submit"
-          variant="contained"
-          size="large"
-          disabled={submitting}
-          startIcon={
-            submitting ? (
-              <CircularProgress size={18} color="inherit" aria-hidden="true" />
-            ) : (
-              <Send />
-            )
-          }
-        >
-          {submitting ? t('contact.form.submitting') : t('contact.form.submit')}
-        </Button>
-
-        <Typography variant="body2" sx={{ color: 'var(--c-ink-faint)' }}>
-          {t('contact.form.privacy')}
-        </Typography>
-      </Box>
-
-      {/* Помилки озвучуються зчитувачем екрана, а не лише показуються */}
-      <Box role="alert" aria-live="polite">
-        {status === 'error' && (
-          <Box
-            sx={{
-              display: 'flex',
-              gap: 1.5,
-              p: 2,
-              borderRadius: '12px',
-              border: '1px solid var(--c-accent-alt)',
-              backgroundColor: 'var(--c-accent-alt-soft)',
-              transition: `opacity ${motion.base} ${motion.ease}`,
-            }}
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 2 }}>
+          <Button
+            type="submit"
+            variant="contained"
+            size="large"
+            disabled={submitting}
+            startIcon={
+              submitting ? (
+                <CircularProgress size={18} color="inherit" aria-hidden="true" />
+              ) : (
+                <Send />
+              )
+            }
           >
-            <ErrorOutline fontSize="small" sx={{ color: 'var(--c-accent-alt)', mt: '2px' }} />
-            <Typography variant="body2" sx={{ color: 'var(--c-ink)' }}>
-              {t('contact.form.errorText')}{' '}
-              <Link href={`mailto:${CONTACTS.email}`} sx={{ fontWeight: 600 }}>
-                {CONTACTS.email}
-              </Link>
-            </Typography>
-          </Box>
-        )}
+            {submitting ? t('contact.form.submitting') : t('contact.form.submit')}
+          </Button>
+
+          <Typography variant="body2" sx={{ color: 'var(--c-ink-faint)' }}>
+            {t('contact.form.privacy')}
+          </Typography>
+        </Box>
+
+        {/* Помилки озвучуються зчитувачем екрана, а не лише показуються */}
+        <Box role="alert" aria-live="polite">
+          {status === 'error' && (
+            <Box
+              sx={{
+                display: 'flex',
+                gap: 1.5,
+                p: 2,
+                borderRadius: '12px',
+                border: '1px solid var(--c-accent-alt)',
+                backgroundColor: 'var(--c-accent-alt-soft)',
+                transition: `opacity ${motion.base} ${motion.ease}`,
+              }}
+            >
+              <ErrorOutline fontSize="small" sx={{ color: 'var(--c-accent-alt)', mt: '2px' }} />
+              <Typography variant="body2" sx={{ color: 'var(--c-ink)' }}>
+                {t('contact.form.errorText')}{' '}
+                <Link href={`mailto:${CONTACTS.email}`} sx={{ fontWeight: 600 }}>
+                  {CONTACTS.email}
+                </Link>
+              </Typography>
+            </Box>
+          )}
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 };
 
